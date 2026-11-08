@@ -1,0 +1,285 @@
+:root {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  color: #263445;
+  background: #f4f6f9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary: #24476b;
+  --primary-light: #eaf0f6;
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --text: #263445;
+  --text-secondary: #718096;
+  --border: #e2e8f0;
+  --success: #198754;
+  --danger: #dc3545;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#app {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* 系統主架構 */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 左側導覽列 */
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  background: var(--primary);
+  color: white;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-title {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.6;
+  padding: 0 12px 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.menu-item {
+  padding: 13px 14px;
+  color: #dce6f0;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background: rgba(255,255,255,0.16);
+  color: white;
+}
+
+/* 右側主要內容 */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 32px 40px;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  font-size: 26px;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.page-header p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* 卡片 */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.025);
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 0 0 18px;
+}
+
+/* 儀表板 */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.dashboard-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.dashboard-item .label {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.dashboard-item .value {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+/* 按鈕 */
+.btn {
+  border: none;
+  border-radius: 7px;
+  padding: 10px 18px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #193752;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 狀態 */
+.status-success {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.status-error {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* 表單 */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-control {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  outline: none;
+  background: white;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+}
+
+/* JSON 顯示 */
+pre {
+  background: #f1f4f8;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 13px;
+}
+
+/* 手機和平板 */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 0;
+    padding: 16px;
+  }
+
+  .sidebar-title {
+    padding-bottom: 14px;
+  }
+
+  .sidebar-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+
+  .menu-item {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .main-content {
+    padding: 22px 16px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 左側選單：未選取狀態 */
+.menu-item {
+  background-color: transparent;
+  color: #e2eaf3;
+  border: none;
+  text-align: left;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* 滑鼠移上去 */
+.menu-item:hover {
+  background-color: #365b7e;
+  color: #ffffff;
+}
+
+/* 目前選取的選單 */
+.menu-item.active {
+  background-color: #ffffff;
+  color: #24476b;
+  font-weight: 600;
+}

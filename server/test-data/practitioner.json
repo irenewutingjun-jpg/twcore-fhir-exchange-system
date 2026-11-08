@@ -1,0 +1,29 @@
+{
+    "resourceType": "Practitioner",
+    "meta": {
+        "profile": [
+            "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Practitioner-twcore"
+        ]
+    },
+    "active": true,
+    "identifier": [
+        {
+            "system": "http://hospital.example.org/practitioner-id",
+            "value": "TEST-DOC-001"
+        }
+    ],
+    "name": [
+        {
+            "use": "official",
+            "family": "金",
+            "given": ["藍蘭"]
+        }
+    ],
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "02-23456789"
+        }
+    ],
+    "gender": "female"
+}

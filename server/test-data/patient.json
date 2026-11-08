@@ -1,0 +1,34 @@
+{
+    "resourceType": "Patient",
+    "meta": {
+        "profile": [
+            "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Patient-twcore"
+        ]
+    },
+    "active": true,
+    "identifier": [
+        {
+            "system": "http://hospital.example.org/patient-id",
+            "value": "TEST-PAT-001"
+        }
+    ],
+    "name": [
+        {
+            "use": "official",
+            "family": "艾",
+            "given": ["小華"]
+        }
+    ],
+    "gender": "male",
+    "birthDate": "1995-05-20",
+    "managingOrganization": {
+        "reference": "Organization/259305",
+        "display": "TW Core 測試醫院"
+    },
+    "generalPractitioner": [
+        {
+            "reference": "Practitioner/259307",
+            "display": "金藍蘭"
+        }
+    ]
+}

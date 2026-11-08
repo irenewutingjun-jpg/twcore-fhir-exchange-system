@@ -1,0 +1,27 @@
+{
+    "resourceType": "Organization",
+    "meta": {
+        "profile": [
+            "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Organization-hosp-twcore"
+        ]
+    },
+    "active": true,
+    "identifier": [
+        {
+            "system": "http://hospital.example.org/organization-id",
+            "value": "TEST-HOSP-001"
+        }
+    ],
+    "name": "TW Core 測試醫院",
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "02-12345678"
+        }
+    ],
+    "address": [
+        {
+            "country": "TW"
+        }
+    ]
+}
